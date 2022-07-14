@@ -1,0 +1,38 @@
+#navigation {
+  display: flex;
+  width: 8%;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 0.01vw solid white;
+  background-color: $background-color--2;
+  border-radius: 0.8vw;
+  border: 1px solid $violet-color--3;
+  & a {
+    text-decoration: none;
+  }
+  .logo-container {
+    display: flex;
+    padding: 1.2vw 0;
+    font-size: 0.5vw;
+    font-weight: 400;
+    background: transparent;
+    border-radius: 0.5vw;
+  }
+  .navlinks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    & a {
+      display: flex;
+      width: 100%;
+      font-size: 0.85vw;
+      background: transparent;
+      padding: 1vw 0;
+      & i {
+        font-size: 1.5vw;
+        background: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// This main file decribes the architecture of each page
+@import "./utils/variables";
+@import "./base/typography";
+@import "./components/cards";
+
+@import "./layout/navigation";
+@import "./pages/home-page";
+@import "./pages/dashboard-page";
+
+#root {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5vw 0;
+  width: 78%;
+  min-height: 100vh;
+}

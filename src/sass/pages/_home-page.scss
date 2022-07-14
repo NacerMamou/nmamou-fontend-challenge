@@ -1,0 +1,116 @@
+#homepage {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  .favorite-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    border-left: 1px solid $violet-color--3;
+    .header {
+      display: flex;
+      justify-content: center;
+      width: 88%;
+      font-weight: 600;
+      font-size: 1vw;
+      border-bottom: 1px solid $violet-color--3;
+      padding: 1vw 0 1vw 0;
+    }
+    .info-message {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 50%;
+      color: $red-color--1;
+      margin-top: 5vw;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 88%;
+      padding-top: 0.8vw;
+      .category-selector {
+        @include category-selector-style--2;
+      }
+    }
+
+    .confirmation-container {
+      display: flex;
+      justify-content: center;
+      width: 88%;
+      & a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-decoration: none;
+        font-size: 1.2vw;
+        padding: 0.3vw 0;
+        border-radius: 0.3vw;
+        background: linear-gradient(200deg, $orange-color--1, $red-color--1);
+        &:hover {
+        }
+      }
+    }
+  }
+  .categories-searcher-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72.5%;
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      width: 98%;
+      padding-bottom: 1vw;
+      margin-bottom: 1.5vw;
+      border-bottom: 1px solid $violet-color--3;
+      .page-name-container {
+        display: flex;
+        align-items: center;
+        & i {
+          font-size: 2vw;
+          padding: 0.5vw;
+        }
+      }
+      .search-bar {
+        display: flex;
+        width: 35%;
+        align-items: center;
+        background: transparent;
+        border-radius: 0.5vw;
+        height: 2vw;
+        margin-top: 0.7vw;
+        border: 0.01vw solid $violet-color--3;
+        & label {
+          padding: 0 0.5vw;
+          & i {
+            color: $violet-color--3;
+          }
+        }
+        & input {
+          display: flex;
+          font-size: 0.8vw;
+          background: transparent;
+          border: none;
+          outline: none;
+          appearance: none;
+          color: $violet-color--3;
+        }
+      }
+    }
+
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: space-between;
+      .category-selector {
+        @include category-selector-style--1;
+      }
+    }
+  }
+}
