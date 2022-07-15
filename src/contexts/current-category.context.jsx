@@ -22,7 +22,6 @@ export const CurrentCategoryProvider = ({ children }) => {
 
   return (
     <CurrentCategoryContext.Provider value={value}>
-      {" "}
       {children}
     </CurrentCategoryContext.Provider>
   );

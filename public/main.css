@@ -250,7 +250,7 @@
 #dashboard .charts-container {
   display: flex;
   flex-direction: column;
-  width: 72.5%;
+  width: 69.5%;
 }
 #dashboard .charts-container .top-header {
   display: flex;
@@ -368,40 +368,6 @@
   width: 100%;
   height: 22vw;
 }
-#dashboard .charts-container .main-container .date-selectors {
-  display: flex;
-  position: absolute;
-  top: 10%;
-  right: 1%;
-  background-color: #1d1b2a;
-  z-index: 1;
-}
-#dashboard .charts-container .main-container .date-selectors .date-selector {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 2vw;
-  background-color: #1d1b2a;
-  padding: 0.5vw;
-  border-radius: 0.2vw;
-}
-#dashboard .charts-container .main-container .date-selectors .date-selector .label {
-  display: flex;
-  background-color: #1d1b2a;
-  color: #56f7a5;
-  padding-right: 0.5vw;
-}
-#dashboard .charts-container .main-container .date-selectors .date-selector .selector {
-  display: flex;
-  width: 7vw;
-  border-radius: 0.2vw;
-  font-size: 0.6vw;
-  font-weight: 400;
-  padding: 0.2vw 0.2vw;
-  background-color: #0c0d0e;
-  color: #56f7a5;
-  border: 0.005vw solid #56f7a5;
-}
 #dashboard .charts-container .main-container .current-category-container {
   display: flex;
   justify-content: center;
@@ -496,8 +462,203 @@
 }
 #dashboard .extra-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28%;
+  border: 1px solid #726a9a;
+  border-radius: 0.8vw;
+  background-color: #1d1b2a;
+}
+#dashboard .extra-container * {
+  background: transparent;
+}
+#dashboard .extra-container .volumes-comparator {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#dashboard .extra-container .volumes-comparator h2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1vw 0;
+  border-bottom: 1px solid #726a9a;
+}
+#dashboard .extra-container .volumes-comparator .infos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5vw 0.7vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .category-details {
+  margin-bottom: 3vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection {
+  margin-bottom: 3vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection p {
+  margin-bottom: 0.7vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-items: center;
+  border-radius: 0.2vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .label {
+  display: flex;
+  font-size: 0.7vw;
+  width: 100%;
+  margin-bottom: 0.11vw;
+  color: #56f7a5;
+}
+#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .selector {
+  background-color: #111019;
+  display: flex;
+  width: 100%;
+  border-radius: 0.15vw;
+  font-size: 0.75vw;
+  padding: 0.3vw 0.2vw;
+  border: none;
+  box-shadow: 0 0 0.1vw #726a9a;
+  color: #56f7a5;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.5vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution * {
+  font-size: 0.8vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current {
+  display: flex;
+  width: 50%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current i {
+  display: flex;
+  justify-content: center;
   width: 25%;
-  border: 1px solid wheat;
+  color: #f49900;
+  padding-top: 0.1vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current .details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current .details strong {
+  display: flex;
+  width: 100%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current .details p {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  font-weight: 600;
+  color: #726a9a;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .current .details span {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  color: #f49900;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous {
+  display: flex;
+  width: 50%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous i {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  color: #abd4ff;
+  padding-top: 0.1vw;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details strong {
+  display: flex;
+  width: 100%;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details p {
+  display: flex;
+  width: 30%;
+  color: #726a9a;
+  font-weight: 600;
+}
+#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details span {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  color: #abd4ff;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 1.5vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 4.2vw;
+  height: 4.2vw;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 2vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  width: 4.2vw;
+  height: 4.2vw;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  border: 0.4vw solid;
+  border-top-color: #5a00e6;
+  border-right-color: #abd4ff;
+  border-bottom-color: #f49900;
+  border-left-color: #f8f2d3;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage {
+  font-size: 0.9vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .number {
+  margin-left: 0.35vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .symbol {
+  margin-left: 0.35vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .title {
+  display: flex;
+  justify-content: center;
+  color: #726a9a;
+  font-size: 0.9vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .value {
+  font-size: 0.9vw;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .negative {
+  color: #d62f43;
+}
+#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .positive {
+  color: #56f7a5;
 }
 
 #root {

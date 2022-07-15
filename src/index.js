@@ -7,6 +7,7 @@ import { ChartProvider } from "./contexts/chart.context";
 import { SecondaryChartProvider } from "./contexts/secondary-chart.context";
 import { CurrentCategoryProvider } from "./contexts/current-category.context";
 import { FavoriteCategoriesProvider } from "./contexts/favorite-categories.context";
+import { VolumesComparatorProvider } from "./contexts/volumes-comparator.context";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -18,7 +19,9 @@ root.render(
         <ChartProvider>
           <SecondaryChartProvider>
             <CurrentCategoryProvider>
-              <App />
+              <VolumesComparatorProvider>
+                <App />
+              </VolumesComparatorProvider>
             </CurrentCategoryProvider>
           </SecondaryChartProvider>
         </ChartProvider>

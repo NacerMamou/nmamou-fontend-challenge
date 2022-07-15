@@ -15,7 +15,7 @@ export function getStringDateInverted(dateInMilliseconds) {
     dateObj.getMonth() + 1 >= 10
       ? String(dateObj.getMonth() + 1)
       : String(`0${dateObj.getMonth() + 1}`);
-  return String("01-" + m + `-${dateObj.getFullYear()}` );
+  return String("01-" + m + `-${dateObj.getFullYear()}`);
 }
 
 export function getNumberOfRecords(startingDate, endingDate) {
@@ -58,4 +58,50 @@ export function oneYearBeforeDate(date) {
   let newDate = Number(date - 12 * monthInMillis);
   newDate = newDate > Date.UTC(2018, 6, 1) ? newDate : Date.UTC(2018, 6, 1);
   return newDate;
+}
+
+export function getMinAndMax(data) {
+  let min = data[0];
+  let max = data[0];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] < min) {
+      min = data[i];
+    }
+    if (data[i] > max) {
+      max = data[i];
+    }
+  }
+  return { Min: min, Max: max };
+}
+
+export function compare(
+  primaryData,
+  secondaryData,
+  primaryAverage,
+  secondaryAverage
+) {
+  let primaryMin = getMinAndMax(primaryData).Min;
+  let primaryMax = getMinAndMax(primaryData).Max;
+  let secondaryMin = getMinAndMax(secondaryData).Min;
+  let secondaryMax = getMinAndMax(secondaryData).Max;
+
+  let minEvolution = Math.floor(
+    ((primaryMin - secondaryMin) / secondaryMin) * 100
+  );
+  let maxEvolution = Math.floor(
+    ((primaryMax - secondaryMax) / secondaryMax) * 100
+  );
+  let avgEvolution = Math.floor(
+    ((primaryAverage - secondaryAverage) / secondaryAverage) * 100
+  );
+
+  return {
+    minEvolution,
+    maxEvolution,
+    avgEvolution,
+    primaryMin,
+    primaryMax,
+    secondaryMin,
+    secondaryMax,
+  };
 }
