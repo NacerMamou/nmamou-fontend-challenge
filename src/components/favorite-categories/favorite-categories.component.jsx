@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { FavoriteCategoriesContext } from "../../contexts/favorite-categories.context";
 import CategorySelector from "../category-selector/category-selector.component";
 
-function FavoriteCategories() {
+const FavoriteCategories = () => {
   const { isEmpty, favoriteCategoriesArray } = useContext(
     FavoriteCategoriesContext
   );
-  useEffect(() => {}, []);
 
   return (
     <Fragment>

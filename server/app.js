@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+
 const bodyParser = require("body-parser");
 const categories = require("./data/categories.json");
 const volumesMap = require("./data/volumes.map");
@@ -13,6 +15,17 @@ app.use(
     origin: "*",
   })
 );
+
+app.use("/", express.static(path.join(__dirname, "..", "build")));
+app.use("/dashboard", express.static(path.join(__dirname, "..", "build")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+});
+
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+});
 
 app.get("/api/categories.json", (request, response) => {
   response.status(200).send(categories);

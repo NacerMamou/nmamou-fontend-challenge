@@ -1,7 +1,8 @@
-import { useState, createContext } from "react";
-import record from "../data/volumes/250162.json";
-import { getVolumeForCustomPeriod, getNumberOfRecords, getAverageData} from "../utils/date.utils"; 
-
+import { useState, createContext, useEffect } from "react";
+import { resolvePath } from "react-router-dom";
+import { getRequest } from "../http/request-functions";
+import { getVolumeForCustomPeriod, getNumberOfRecords, getAverageData, getDateIndexInSelector} from "../utils/date.utils"; 
+import opt from "../utils/dates-data";
 
 export const ChartContext = createContext({
   chartDescription: {
@@ -17,21 +18,42 @@ export const ChartContext = createContext({
 });
 
 export const ChartProvider = ({ children }) => {
+
+  const [startingDate, setStartingDate] = useState(Date.UTC(2018, 6, 1));
+  const [endingDate, setEndingDate] = useState(Date.UTC(2022,5,1));
+  const [data, setData] = useState([]);
+  const [filtredData, setFiltredData] = useState([]);
+  const [averageData, setAverageData ] = useState([]);
+  
+  useEffect(()=>{    
+    let savedChartContext = JSON.parse(localStorage.getItem("ChartContext"));
+    if(savedChartContext){
+      setStartingDate(savedChartContext.startingDate);
+      setEndingDate(savedChartContext.endingDate);
+      setData(savedChartContext.data);
+      setFiltredData(savedChartContext.filtredData);
+      setAverageData(savedChartContext.averageData);
+    }else{
+      getRequest("/api/volumes/250162.json").then(data=>{
+        setData(data);
+        let initialfiltredData = getVolumeForCustomPeriod(
+          data,
+          startingDate,
+          getNumberOfRecords(startingDate, endingDate)
+        );
+        setFiltredData(initialfiltredData);
+  
+        setAverageData(getAverageData(initialfiltredData));
+      });
+    }
+  }, []);
+  
   const [chartDescription, setChartDescription] = useState({
     title: "Chart",
     categoryName: ` "Products"`,
     recordName: "Search volume",
   });
-  const [startingDate, setStartingDate] = useState(Date.UTC(2018, 6, 1));
-  const [endingDate, setEndingDate] = useState(Date.UTC(2022,5,1));
-  const [data, setData] = useState(record);
-  const [filtredData, setFiltredData] = useState(getVolumeForCustomPeriod(
-    data,
-    startingDate,
-    getNumberOfRecords(startingDate, endingDate)
-  ));
-  const [averageData, setAverageData ] = useState(getAverageData(filtredData));
-
+  
   const value = {
     startingDate,
     setStartingDate,

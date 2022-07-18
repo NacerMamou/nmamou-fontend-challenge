@@ -1,6 +1,6 @@
 import { getStringDateInverted } from "../../utils/date.utils";
 
-function CurrentCategory({title, startingDate, endingDate}) {
+const CurrentCategory = ({title, startingDate, endingDate}) => {
   return (
     <div className="current-category-container">
       <h2 className="category-title">

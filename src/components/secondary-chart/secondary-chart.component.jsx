@@ -3,8 +3,9 @@ import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useContext, useEffect } from "react";
 import { SecondaryChartContext } from "../../contexts/secondary-chart.context";
+import { CurrentCategoryContext } from "../../contexts/current-category.context";
 
-function SecondaryChart() {
+const SecondaryChart = () => {
   const {
     filtredData_sec,
     averageData_sec,
@@ -12,16 +13,16 @@ function SecondaryChart() {
     chartDescription_sec,
   } = useContext(SecondaryChartContext);
 
+  const { currentCategoryInfos } = useContext(CurrentCategoryContext);
+
   return (
     <div className="secondary-chart">
       <HighchartsReact
         highcharts={Highcharts}
         options={{
-          maintainAspectRatio: false,
-          responsive: true,
           colors: [
             colorMap.get("orange-color--1"),
-            colorMap.get("green-color--1"),
+            colorMap.get("green-color--2"),
           ],
           chart: {
             backgroundColor: "#1d1b2a",
@@ -36,8 +37,8 @@ function SecondaryChart() {
           title: {
             text: ``,
             style: {
-              color: "green",
-              font: 'bold 0vw "Trebuchet MS", Verdana, sans-serif',
+              // color: "green",
+              // font: 'bold 0vw "Trebuchet MS", Verdana, sans-serif',
             },
           },
           // subtitle: {
@@ -50,19 +51,13 @@ function SecondaryChart() {
 
           xAxis: {
             title: {
-              text: "Time Period",
+              text: "",
               style: {
-                color: "white",
-                font: '0.85vw "Trebuchet MS", Verdana, sans-serif',
+                // font: '0.85vw "Trebuchet MS", Verdana, sans-serif',
               },
             },
             type: "datetime",
             gridLineColor: "#FFFFFF",
-            labels: {
-              style: {
-                color: "#A0A0A0",
-              },
-            },
             lineColors: "#A0A0A0",
             minerTickInterval: null,
           },
@@ -70,8 +65,7 @@ function SecondaryChart() {
             title: {
               text: "Search Volume",
               style: {
-                color: "white",
-                font: '0.85vw  "Trebuchet MS", Verdana, sans-serif',
+                // font: '0.85vw  "Trebuchet MS", Verdana, sans-serif',
               },
             },
             gridLineColor: "#FFFFFF",
@@ -88,6 +82,11 @@ function SecondaryChart() {
             layout: "vertical",
             align: "right",
             verticalAlign: "middle",
+            backgroundColor: colorMap.get("background-color--1"),
+            borderRadius: "0.1vw",
+            itemStyle: {
+              color: "#FFFFFF",
+            },
           },
 
           plotOptions: {
@@ -97,12 +96,13 @@ function SecondaryChart() {
           },
           series: [
             {
-              name: chartDescription_sec.categoryName,
+              name: currentCategoryInfos.title,
               pointStart: startingDate_sec,
               data: filtredData_sec,
               marker: {
                 enabled: false,
               },
+              style: {},
             },
             {
               name: "Average",
@@ -113,6 +113,44 @@ function SecondaryChart() {
               },
             },
           ],
+          responsive: {
+            rules: [
+              {
+                condition: {
+                  maxWidth: 576,
+                },
+                chartOptions: {
+                  legend: {
+                    align: "center",
+                    verticalAlign: "bottom",
+                    layout: "horizontal",
+                    itemStyle: {
+                      // fontSize: "3vw",
+                    },
+                  },
+                  xAxis: {
+                    labels: {
+                      style: {
+                        // fontSize: "2vw",
+                      },
+                    },
+                  },
+                  yAxis: {
+                    title: {
+                      style: {
+                        // fontSize: "2.2vw",
+                      },
+                    },
+                    labels: {
+                      style: {
+                        // fontSize: "2vw",
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
         }}
       />
     </div>

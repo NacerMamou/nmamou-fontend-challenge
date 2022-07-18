@@ -1,4 +1,7 @@
+
+import opt from "./dates-data";
 const monthInMillis = 1000 * 60 * 60 * 24 * 30;
+
 
 export function getStringDate(dateInMilliseconds) {
   const dateObj = new Date(dateInMilliseconds);
@@ -17,6 +20,18 @@ export function getStringDateInverted(dateInMilliseconds) {
       : String(`0${dateObj.getMonth() + 1}`);
   return String("01-" + m + `-${dateObj.getFullYear()}`);
 }
+
+
+export function getDateIndexInSelector(date, dateData){
+  let dateIndex = 0;
+  dateData.map((dateObject, index)=>{
+    if(date == dateObject.value){
+      dateIndex = index;
+    }
+  });
+  return dateIndex;
+}
+
 
 export function getNumberOfRecords(startingDate, endingDate) {
   return Number(Math.floor((endingDate - startingDate) / monthInMillis));

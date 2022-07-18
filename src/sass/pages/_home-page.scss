@@ -1,99 +1,67 @@
 #homepage {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 90%;
-  .favorite-categories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25%;
-    border-left: 1px solid $violet-color--3;
-    .header {
-      display: flex;
-      justify-content: center;
-      width: 88%;
-      font-weight: 600;
-      font-size: 1vw;
-      border-bottom: 1px solid $violet-color--3;
-      padding: 1vw 0 1vw 0;
-    }
-    .info-message {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      width: 50%;
-      color: $red-color--1;
-      margin-top: 5vw;
-    }
-
-    .cards-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      width: 88%;
-      padding-top: 0.8vw;
-      .category-selector {
-        @include category-selector-style--2;
-      }
-    }
-
-    .confirmation-container {
-      display: flex;
-      justify-content: center;
-      width: 88%;
-      & a {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        text-decoration: none;
-        font-size: 1.2vw;
-        padding: 0.3vw 0;
-        border-radius: 0.3vw;
-        background: linear-gradient(200deg, $orange-color--1, $red-color--1);
-        &:hover {
-        }
-      }
-    }
-  }
+  min-height: 100%;
   .categories-searcher-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 72.5%;
-
+    min-height: 100%;
     .top-header {
       display: flex;
       justify-content: space-between;
-      width: 98%;
-      padding-bottom: 1vw;
+      align-items: center;
+      width: 100%;
+      padding: 1.2vw 1vw;
       margin-bottom: 1.5vw;
-      border-bottom: 1px solid $violet-color--3;
+      box-shadow: 0 0 4px $violet-color--3;
+      border-radius: 0.8vw;
+      * {
+        background: transparent;
+      }
       .page-name-container {
         display: flex;
         align-items: center;
-        & i {
+        width: 55%;
+        & h2 {
+          display: flex;
+          align-items: center;
           font-size: 2vw;
-          padding: 0.5vw;
+          color: $violet-color--3;
+        }
+        & i {
+          display: flex;
+          align-items: center;
+          font-size: 2.7vw;
+          margin-right: 0.5vw;
+          color: $violet-color--3;
         }
       }
       .search-bar {
         display: flex;
         width: 35%;
         align-items: center;
-        background: transparent;
-        border-radius: 0.5vw;
-        height: 2vw;
-        margin-top: 0.7vw;
-        border: 0.01vw solid $violet-color--3;
+        border-radius: 0.3vw;
+        box-shadow: 0 0 4px $violet-color--3;
+        padding: 0.4vw 0;
         & label {
-          padding: 0 0.5vw;
           & i {
+            display: flex;
+            align-items: center;
+            font-size: 1vw;
+            background: transparent;
             color: $violet-color--3;
+            padding: 0 1vw;
           }
         }
         & input {
           display: flex;
-          font-size: 0.8vw;
+          align-items: center;
+          font-size: 1vw;
+          font-weight: 800;
           background: transparent;
           border: none;
           outline: none;
@@ -110,6 +78,228 @@
       justify-content: space-between;
       .category-selector {
         @include category-selector-style--1;
+      }
+    }
+  }
+  .favorite-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    box-shadow: 0 0 4px $violet-color--3;
+    border-radius: 0.8vw;
+    min-height: 88vh;
+    .header {
+      display: flex;
+      justify-content: center;
+      width: 88%;
+      font-weight: 600;
+      font-size: 1vw;
+      color: $violet-color--3;
+      padding: 1.7vw 0;
+      margin-bottom: 1.2vw;
+    }
+    .info-message {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 70%;
+      margin-top: 30vh;
+      font-size: 1.3vw;
+      color: $red-color--1;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 88%;
+      padding-top: 0.8vw;
+      margin-bottom: 0.7vw;
+      .category-selector {
+        @include category-selector-style--2;
+      }
+    }
+
+    .confirmation-container {
+      display: flex;
+      justify-content: center;
+      width: 88%;
+      & a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-decoration: none;
+        font-size: 1.2vw;
+        font-weight: 800;
+        padding: 0.55vw 0;
+        border-radius: 0.3vw;
+        background: linear-gradient(200deg, $orange-color--1, $red-color--1);
+        transition: all linear 0.15s;
+        &:hover {
+          filter: brightness(1.35);
+          background: linear-gradient(300deg, $orange-color--1, $red-color--1);
+          box-shadow: 0 0 0.5vw $violet-color--3;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 1025px) {
+    width: 100%;
+    .categories-searcher-container {
+      min-height: 60vh;
+      max-height: 60vh;
+      margin-bottom: 4vw;
+      width: 100%;
+      .top-header {
+        padding: 1.8vw 1.8vw;
+        margin-bottom: 2.5vw;
+        .page-name-container {
+          width: 50%;
+          & h2 {
+            font-size: 3.5vw;
+          }
+          & i {
+            font-size: 5vw;
+            margin-right: 1.2vw;
+          }
+        }
+        .search-bar {
+          width: 48%;
+          padding: 1.3vw 0;
+          border-radius: 2.5vw;
+          & label {
+            & i {
+              font-size: 2.2vw;
+              padding: 0 2vw;
+            }
+          }
+          & input {
+            font-size: 2vw;
+            font-weight: 700;
+          }
+        }
+      }
+      .categories-container {
+        display: flex;
+        overflow: auto;
+        box-shadow: 0 0 0.7vw $violet-color--3;
+        padding: 3vw 4vw;
+      }
+    }
+    .favorite-categories {
+      width: 100%;
+      min-height: 17vh;
+      .header {
+        width: 100%;
+        font-size: 3.5vw;
+        padding: 2vw 0;
+        margin-bottom: 0vw;
+      }
+      .info-message {
+        width: 85%;
+        margin-top: 0vh;
+        font-size: 2.5vw;
+      }
+
+      .cards-container {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding: 1vw 4vw;
+        overflow: auto;
+        margin-bottom: 3vw;
+      }
+
+      .confirmation-container {
+        width: 91.5%;
+        & a {
+          font-size: 3vw;
+          padding: 1.6vw 0;
+          border-radius: 0.5vw;
+        }
+        margin-bottom: 2vw;
+      }
+    }
+  }
+  @media all and (max-width: 576px) {
+    .categories-searcher-container {
+      width: 100%;
+      margin-bottom: 0;
+      min-height: 53vh;
+      max-height: 53vh;
+      margin-bottom: 4vw;
+      .top-header {
+        padding: 4vw 4vw;
+        margin-bottom: 4vw;
+        .page-name-container {
+          width: 50%;
+          & h2 {
+            font-size: 6vw;
+          }
+          & i {
+            font-size: 7vw;
+            margin-right: 1.5vw;
+          }
+        }
+        .search-bar {
+          width: 50%;
+          padding: 1.2vw 0;
+          border-radius: 3vw;
+          & label {
+            & i {
+              font-size: 3.5vw;
+              padding: 0 3vw;
+            }
+          }
+          & input {
+            font-size: 3.8vw;
+          }
+        }
+      }
+      .categories-container {
+        display: flex;
+        height: 100%;
+        overflow: scroll;
+        box-shadow: 0 0 1vw $violet-color--3;
+        padding: 4vw;
+      }
+    }
+    .favorite-categories {
+      width: 100%;
+      min-height: 0vh;
+      padding-bottom: 2vw;
+      align-self: flex-end;
+      .header {
+        width: 100%;
+        font-size: 6vw;
+        padding: 3vw 0 1vw 0;
+        margin-bottom: 0vw;
+      }
+      .info-message {
+        width: 85%;
+        margin-top: 0;
+        font-size: 2.5vw;
+      }
+
+      .cards-container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0 4vw;
+        margin-bottom: 3vw;
+        padding: 3vw 4vw;
+        overflow: auto;
+      }
+
+      .confirmation-container {
+        width: 92%;
+        & a {
+          font-size: 4vw;
+          padding: 2.2vw 0;
+          border-radius: 0.8vw;
+        }
       }
     }
   }

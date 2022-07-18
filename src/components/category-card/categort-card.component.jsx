@@ -1,5 +1,5 @@
 
-function CategoryCard({ id, nbKeywords, name }) {
+const CategoryCard = ({ id, nbKeywords, name }) => {
   return (
     <div className="category-selector">
       <div className="category-id-container">

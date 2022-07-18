@@ -3,10 +3,9 @@
   width: 8%;
   flex-direction: column;
   align-items: center;
-  border-bottom: 0.01vw solid white;
-  background-color: $background-color--2;
+  background-color: $background-color--1;
   border-radius: 0.8vw;
-  border: 1px solid $violet-color--3;
+  box-shadow: 0 0 4px $violet-color--3;
   & a {
     text-decoration: none;
   }
@@ -30,8 +29,49 @@
       background: transparent;
       padding: 1vw 0;
       & i {
-        font-size: 1.5vw;
+        font-size: 2vw;
         background: transparent;
+        color: $violet-color--3;
+        text-shadow: 0 0 4vw $violet-color--3;
+      }
+    }
+  }
+  @media all and (max-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.8vw 0;
+    margin-bottom: 2vw;
+
+    .logo-container {
+      padding: 1.2vw 0;
+      font-size: 0.5vw;
+      border-radius: 0.5vw;
+    }
+    .navlinks-container {
+      flex-direction: row;
+      align-items: center;
+      & a {
+        padding: 0 1.7vw;
+        & i {
+          font-size: 3.5vw;
+        }
+      }
+    }
+    @media all and (max-width: 576px) {
+      padding: 3.5vw 1vw;
+      margin-bottom: 2vw;
+      .logo-container {
+      }
+      .navlinks-container {
+        flex-direction: row;
+        align-items: center;
+        & a {
+          padding: 0 4vw;
+          & i {
+            font-size: 5.5vw;
+          }
+        }
       }
     }
   }

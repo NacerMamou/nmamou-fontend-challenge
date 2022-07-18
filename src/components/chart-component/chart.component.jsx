@@ -3,22 +3,60 @@ import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useContext } from "react";
 import { ChartContext } from "../../contexts/chart.context";
+import { CurrentCategoryContext } from "../../contexts/current-category.context";
 
-function Chart() {
+const Chart = () => {
   const { filtredData, averageData, startingDate, chartDescription } =
     useContext(ChartContext);
+  const { currentCategoryInfos } = useContext(CurrentCategoryContext);
 
   return (
     <div className="main-chart">
       <HighchartsReact
         highcharts={Highcharts}
         options={{
-          maintainAspectRatio: false,
-          responsive: true,
-
+          responsive: {
+            rules: [
+              {
+                condition: {
+                  maxWidth: 576,
+                  
+                },
+                chartOptions: {
+                  legend: {
+                    align: "center",
+                    verticalAlign: "bottom",
+                    layout: "horizontal",
+                    itemStyle: {
+                      // fontSize: "3vw",
+                    },
+                  },
+                  xAxis: {
+                    labels: {
+                      style: {
+                        // fontSize: "2vw",
+                      },
+                    },
+                  },
+                  yAxis: {
+                    title: {
+                      style: {
+                        // fontSize: "2.2vw",
+                      },
+                    },
+                    labels: {
+                      style: {
+                        // fontSize: "2vw",
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
           colors: [
             colorMap.get("orange-color--1"),
-            colorMap.get("green-color--1"),
+            colorMap.get("green-color--2"),
           ],
           chart: {
             backgroundColor: "#1d1b2a",
@@ -31,10 +69,9 @@ function Chart() {
           },
 
           title: {
-            text: ``,
+            text: "",
             style: {
-              color: colorMap.get("green-color--1"),
-              font: 'bold 1vw "Trebuchet MS", Verdana, sans-serif',
+              // font: 'bold 1vw "Trebuchet MS", Verdana, sans-serif',
             },
           },
           // subtitle: {
@@ -47,18 +84,19 @@ function Chart() {
 
           xAxis: {
             title: {
-              text: "Time Period",
+              text: "",
               style: {
-                color: "white",
-                font: '0.85vw "Trebuchet MS", Verdana, sans-serif',
+                textShadow: "0 0 0vw",
+                // font: '0.8vw  "Trebuchet MS", Verdana, sans-serif',
               },
             },
             type: "datetime",
             gridLineColor: "#FFFFFF",
             gridLineWidth: 0,
+
             labels: {
               style: {
-                color: "#A0A0A0",
+                // fontSize: "0.6vw",
               },
             },
             lineColors: "#A0A0A0",
@@ -68,16 +106,13 @@ function Chart() {
             title: {
               text: "Search Volume",
               style: {
-                color: "white",
-                font: '1vw  "Trebuchet MS", Verdana, sans-serif',
+                // font: '0.85vw  "Trebuchet MS", Verdana, sans-serif',
               },
             },
             gridLineColor: "#FFFFFF",
             gridLineWidth: 0,
             labels: {
-              style: {
-                color: "#A0A0A0",
-              },
+              style: {},
             },
             lineColors: "#A0A0A0",
             minerTickInterval: null,
@@ -86,6 +121,12 @@ function Chart() {
             layout: "vertical",
             align: "right",
             verticalAlign: "middle",
+            backgroundColor: colorMap.get("background-color--1"),
+            borderRadius: "0.1vw",
+            itemStyle: {
+              // fontSize: "0.7vw",
+              color: "#FFFFFF",
+            },
           },
 
           plotOptions: {
@@ -95,7 +136,7 @@ function Chart() {
           },
           series: [
             {
-              name: chartDescription.categoryName,
+              name: currentCategoryInfos.title,
               pointStart: startingDate,
               data: filtredData,
               marker: {
@@ -103,7 +144,7 @@ function Chart() {
               },
             },
             {
-              name: "Avergae",
+              name: "Average",
               pointStart: startingDate,
               data: averageData,
               marker: {
@@ -111,6 +152,7 @@ function Chart() {
               },
             },
           ],
+          
         }}
       />
     </div>

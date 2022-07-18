@@ -1,19 +1,29 @@
+import opt from "../../utils/dates-data";
 import { ChartContext } from "../../contexts/chart.context";
 import { SecondaryChartContext } from "../../contexts/secondary-chart.context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import {
   getVolumeForCustomPeriod,
   getNumberOfRecords,
   getAverageData,
   oneYearBeforeDate,
+  getDateIndexInSelector,
 } from "../../utils/date.utils";
 
-function EndDateSelector({ label, options }) {
-  const { data, setFiltredData, setAverageData, startingDate, setEndingDate } =
+const EndDateSelector = ({ label, options }) => {
+  const { data, setFiltredData, setAverageData, startingDate,endingDate, setEndingDate } =
     useContext(ChartContext);
 
+    useEffect(()=>{  
+      let endDateElt = document.getElementById("end-date-selector");
+      let endingDateIndex = getDateIndexInSelector(endingDate, opt);
+      endDateElt.options.selectedIndex = endingDateIndex;
+      // console.log(endingDateIndex);
+      }, [endingDate]);
+
   const {
+    data_sec,
     setStartingDate_sec,
     setEndingDate_sec,
     setFiltredData_sec,
@@ -46,6 +56,24 @@ function EndDateSelector({ label, options }) {
     setFiltredData_sec(newfiltredData_sec);
     let newAverageData_sec = getAverageData(newfiltredData_sec);
     setAverageData_sec(newAverageData_sec);
+
+    localStorage.setItem("ChartContext", JSON.stringify({
+      startingDate : startingDate,
+      endingDate: newEndingDate,
+      data: data,
+      filtredData: newfiltredData,
+      averageData: newAverageData,
+    }
+    ));
+
+    localStorage.setItem("SecondaryChartContext", JSON.stringify({
+      startingDate_sec : newStartingDate_sec,
+      endingDate_sec: newEndingDate_sec,
+      data_sec: data_sec,
+      filtredData_sec: newfiltredData_sec,
+      averageData_sec: newAverageData_sec,
+    }
+    ));
   }
 
   return (
@@ -59,6 +87,7 @@ function EndDateSelector({ label, options }) {
           handleEndingDateChange(e);
         }}
         className="selector"
+        id="end-date-selector"
       >
         {options.map(({ label, key, value }) => {
           return (

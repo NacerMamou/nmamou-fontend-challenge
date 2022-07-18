@@ -1,5 +1,7 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
+import { getRequest } from "../http/request-functions";
 import record from "../data/volumes/250162.json";
+
 import {
   getVolumeForCustomPeriod,
   getNumberOfRecords,
@@ -14,7 +16,7 @@ export const SecondaryChartContext = createContext({
   },
   startingDate_sec: null,
   endingDate_sec: null,
-  data_sec: record,
+  data_sec: null,
   filtredData_sec: [],
   averageData_sec: [],
 });
@@ -29,17 +31,33 @@ export const SecondaryChartProvider = ({ children }) => {
     Date.UTC(2018, 6, 1)
   );
   const [endingDate_sec, setEndingDate_sec] = useState(Date.UTC(2021, 5, 1));
-  const [data_sec, setData_sec] = useState(record);
-  const [filtredData_sec, setFiltredData_sec] = useState(
-    getVolumeForCustomPeriod(
-      data_sec,
-      startingDate_sec,
-      getNumberOfRecords(startingDate_sec, endingDate_sec)
-    )
-  );
-  const [averageData_sec, setAverageData_sec] = useState(
-    getAverageData(filtredData_sec)
-  );
+  const [data_sec, setData_sec] = useState([]);
+  const [filtredData_sec, setFiltredData_sec] = useState([]);
+  const [averageData_sec, setAverageData_sec] = useState([]);
+
+  useEffect(() => {
+    let savedSecondaryChartContext = JSON.parse(
+      localStorage.getItem("SecondaryChartContext")
+    );
+    if (savedSecondaryChartContext) {
+      setStartingDate_sec(savedSecondaryChartContext.startingDate_sec);
+      setEndingDate_sec(savedSecondaryChartContext.endingDate_sec);
+      setData_sec(savedSecondaryChartContext.data_sec);
+      setFiltredData_sec(savedSecondaryChartContext.filtredData_sec);
+      setAverageData_sec(savedSecondaryChartContext.averageData_sec);
+    } else {
+      getRequest("/api/volumes/250162.json").then((data) => {
+        setData_sec(data);
+        let initialfiltredData_sec = getVolumeForCustomPeriod(
+          data,
+          startingDate_sec,
+          getNumberOfRecords(startingDate_sec, endingDate_sec)
+        );
+        setFiltredData_sec(initialfiltredData_sec);
+        setAverageData_sec(getAverageData(initialfiltredData_sec));
+      });
+    }
+  }, []);
 
   const value = {
     startingDate_sec,

@@ -7,7 +7,7 @@ import EndDateSelector from "../date-selector/end-date.component";
 
 import opt from "../../utils/dates-data";
 
-function VolumesComparator() {
+const VolumesComparator = () => {
   const {
     minEvolution,
     maxEvolution,
@@ -17,27 +17,27 @@ function VolumesComparator() {
     primaryAvg,
     secondaryMin,
     secondaryMax,
-    secondaryAvg
+    secondaryAvg,
   } = useContext(VolumesComparatorContext);
 
-  const { title, nbKeywords, id } = useContext(CurrentCategoryContext);
+  const { currentCategoryInfos } = useContext(CurrentCategoryContext);
 
   return (
     <div className="volumes-comparator">
       <h2 className="title">SUMMARY</h2>
       <div className="infos">
         <div className="category-details">
-          <div className="id">
-            <p>IDENTIFIER : </p>
-            <span>{id}</span>
-          </div>
           <div className="title">
             <p>NAME : </p>
-            <span>{title}</span>
+            <span>{currentCategoryInfos.title}</span>
           </div>
           <div className="keywords">
             <p>KEYWORDS : </p>
-            <span>{nbKeywords}</span>
+            <span>{currentCategoryInfos.nbKeywords}</span>
+          </div>
+          <div className="id">
+            <p>IDENTIFIER : </p>
+            <span>{currentCategoryInfos.id}</span>
           </div>
         </div>
         <div className="period-selection">
@@ -50,79 +50,90 @@ function VolumesComparator() {
 
         <div className="evolution">
           <div className="current">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot average-dot"></div>
+            </div>
             <div className="details">
-              <strong className="number">{primaryAvg}</strong>
-              <p>AVG</p>
-              <span>Current</span>
+              <strong className="">{primaryAvg}</strong>
+              <p className="average-label">AVG</p>
+              <span className="">Current</span>
             </div>
           </div>
           <div className="previous">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot average-dot"></div>
+            </div>
             <div className="details">
-              <strong className="number">23</strong>
-              <p>AVG</p>
-              <span>1 Year Ago</span>
+              <strong className="">{secondaryAvg}</strong>
+              <p className="average-label">AVG</p>
+              <span className="">1 Year Ago</span>
             </div>
           </div>
         </div>
 
         <div className="evolution">
           <div className="current">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot minimum-dot"></div>
+            </div>
             <div className="details">
-              <strong className="number">{primaryMin}</strong>
-              <p>MIN</p>
-              <span>Current</span>
+              <strong className="">{primaryMin}</strong>
+              <p className="minimum-label">MIN</p>
+              <span className="">Current</span>
             </div>
           </div>
           <div className="previous">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot minimum-dot"></div>
+            </div>
             <div className="details">
-              <strong className="number">{secondaryMin}</strong>
-              <p>MIN</p>
-              <span>1 Year Ago</span>
+              <strong className="">{secondaryMin}</strong>
+              <p className="minimum-label">MIN</p>
+              <span className="">1 Year Ago</span>
             </div>
           </div>
         </div>
 
         <div className="evolution">
           <div className="current">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot maximum-dot"></div>
+            </div>
             <div className="details">
               <strong className="number">{primaryMax}</strong>
-              <p>MAX</p>
+              <p className="maximum-label">MAX</p>
               <span>Current</span>
             </div>
           </div>
           <div className="previous">
-            <i className="fa-solid fa-circle"></i>
+            <div className="circle-dot-container">
+              <div className="circle-dot maximum-dot"></div>
+            </div>
             <div className="details">
-              <strong className="number">{secondaryMax}</strong>
-              <p>MAX</p>
+              <strong className="">{secondaryMax}</strong>
+              <p className="maximum-label">MAX</p>
               <span>1 Year Ago</span>
             </div>
           </div>
         </div>
       </div>
       <div className="circle-comparators">
-      <CircleComparator
-        title="AVG"
-        value={primaryAvg}
-        percentage={avgEvolution}
-      ></CircleComparator>
-      <CircleComparator
-        title="MIN"
-        value={primaryMin}
-        percentage={minEvolution}
-      ></CircleComparator>
-      <CircleComparator
-        title="MAX"
-        value={primaryMax}
-        percentage={maxEvolution}
-      ></CircleComparator>
+        <CircleComparator
+          title="AVG"
+          percentage={avgEvolution}
+          className={"circle-comparator average-circle"}
+        ></CircleComparator>
+        <CircleComparator
+          title="MIN"
+          percentage={minEvolution}
+          className={"circle-comparator minimum-circle"}
+        ></CircleComparator>
+        <CircleComparator
+          title="MAX"
+          percentage={maxEvolution}
+          className={"circle-comparator maximum-circle"}
+        ></CircleComparator>
       </div>
-      
     </div>
   );
 }

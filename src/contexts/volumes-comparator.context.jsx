@@ -6,21 +6,22 @@ import { SecondaryChartContext } from "./secondary-chart.context";
 import { compare } from "../utils/date.utils";
 
 export const VolumesComparatorContext = createContext({
-  minEvolution: 0,
-  maxEvolution: 0,
-  avgEvolution: 0,
-  primaryMin: 0,
-  primaryMax: 0,
-  primaryAvg : 0,
-  secondaryMin: 0,
-  secondaryMax: 0,
-  secondaryAvg : 0,
+  minEvolution: null,
+  maxEvolution: null,
+  avgEvolution: null,
+  primaryMin: null,
+  primaryMax: null,
+  primaryAvg: null,
+  secondaryMin: null,
+  secondaryMax: null,
+  secondaryAvg: null,
 });
 
 export const VolumesComparatorProvider = ({ children }) => {
   const { filtredData, averageData } = useContext(ChartContext);
-  const { filtredData_sec, averageData_sec } = useContext(SecondaryChartContext);
-
+  const { filtredData_sec, averageData_sec } = useContext(
+    SecondaryChartContext
+  );
   const [minEvolution, setMinEvolution] = useState(0);
   const [maxEvolution, setMaxEvolution] = useState(0);
   const [avgEvolution, setAvgEvolution] = useState(0);
@@ -31,24 +32,25 @@ export const VolumesComparatorProvider = ({ children }) => {
   const [secondaryMax, setSecondaryMax] = useState(0);
   const [secondaryAvg, setSecondaryAvg] = useState(0);
 
-  
-
   useEffect(() => {
-    let newComparaison = compare(filtredData, filtredData_sec, averageData[0], averageData_sec[0]);
+    let newComparaison = compare(
+      filtredData,
+      filtredData_sec,
+      averageData[0],
+      averageData_sec[0]
+    );
     setPrimaryMin(newComparaison.primaryMin);
     setPrimaryMax(newComparaison.primaryMax);
-    setPrimaryAvg(newComparaison.primaryAvg);
+    setPrimaryAvg(Math.floor(averageData[0]));
 
     setSecondaryMin(newComparaison.secondaryMin);
     setSecondaryMax(newComparaison.secondaryMax);
-    setSecondaryAvg(newComparaison.secondaryAvg);
+    setSecondaryAvg(Math.floor(averageData_sec[0]));
 
     setMinEvolution(newComparaison.minEvolution);
     setMaxEvolution(newComparaison.maxEvolution);
     setAvgEvolution(newComparaison.avgEvolution);
-    
-
-  }, [filtredData, filtredData_sec, averageData, averageData_sec]);
+  }, [filtredData, filtredData_sec]);
 
   const value = {
     minEvolution,
@@ -68,7 +70,7 @@ export const VolumesComparatorProvider = ({ children }) => {
     secondaryMax,
     setSecondaryMax,
     secondaryAvg,
-    setSecondaryAvg
+    setSecondaryAvg,
   };
 
   return (

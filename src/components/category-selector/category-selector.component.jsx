@@ -10,7 +10,7 @@ import {
   getAverageData,
 } from "../../utils/date.utils";
 
-function CategorySelector({ id, nbKeywords, name }) {
+const CategorySelector = ({ id, nbKeywords, name, selected }) => {
   function getVolumeById(categoryId) {
     const url = `http://localhost:8000/api/volumes/${categoryId}.json`;
     return new Promise((resolve, reject) => {
@@ -29,8 +29,15 @@ function CategorySelector({ id, nbKeywords, name }) {
   const { currentCategoryInfos, setCurrentCategoryInfos } = useContext(
     CurrentCategoryContext
   );
-  const { categories, addCategoryToFavorites, removeCategoryFromFavorites } =
-    useContext(FavoriteCategoriesContext);
+  const {
+    categories,
+    favoriteCategoriesArray,
+    isEmpty,
+    seletedElementId,
+    setSeletedElementId,
+    addCategoryToFavorites,
+    removeCategoryFromFavorites,
+  } = useContext(FavoriteCategoriesContext);
 
   const { setData, setFiltredData, setAverageData, startingDate, endingDate } =
     useContext(ChartContext);
@@ -51,25 +58,88 @@ function CategorySelector({ id, nbKeywords, name }) {
     delete clickedCategory.ancestors;
 
     if (parentClassName === "categories-container") {
-      addCategoryToFavorites({
+      const updatedFavoriteCategoriesArray = addCategoryToFavorites({
         id: clickedCategory.id,
         name: clickedCategory.name,
         nbKeywords: clickedCategory.nbKeywords,
       });
+
+      localStorage.setItem(
+        "FavoriteCategoriesContext",
+        JSON.stringify({
+          categories: categories,
+          favoriteCategoriesArray: updatedFavoriteCategoriesArray,
+          isEmpty: isEmpty,
+          seletedElementId: seletedElementId,
+        })
+      );
     }
+
+    // When a categori is clicked to be deleted
     if (parentClassName === "cards-container") {
-      removeCategoryFromFavorites({
+      const updatedFavoriteCategoriesArray = removeCategoryFromFavorites({
         id: clickedCategory.id,
         name: clickedCategory.name,
         nbKeywords: clickedCategory.nbKeywords,
       });
+
+      // When the current Element is deleted from favorite
+      // We replace the selected element with the root category 250162
+      // We get data and updates charts
+      if (seletedElementId == clickedCategory.id) {
+        let newSearchVolume = await getVolumeById(250162);
+        setCurrentCategoryInfos({
+          id: 250162,
+          title: "Products",
+          nbKeywords: 11818,
+        });
+        setData(newSearchVolume);
+
+        let newfiltredData = getVolumeForCustomPeriod(
+          newSearchVolume,
+          startingDate,
+          getNumberOfRecords(startingDate, endingDate)
+        );
+        setFiltredData(newfiltredData);
+        let newAverageData = getAverageData(newfiltredData);
+        setAverageData(newAverageData);
+
+        let newfiltredData_sec = getVolumeForCustomPeriod(
+          newSearchVolume,
+          startingDate_sec,
+          getNumberOfRecords(startingDate_sec, endingDate_sec)
+        );
+
+        setFiltredData_sec(newfiltredData_sec);
+
+        let newAverageData_sec = getAverageData(newfiltredData_sec);
+        setAverageData_sec(newAverageData_sec);
+
+        setSeletedElementId(250162);
+      }
+
+      localStorage.setItem(
+        "FavoriteCategoriesContext",
+        JSON.stringify({
+          categories: categories,
+          favoriteCategoriesArray: updatedFavoriteCategoriesArray,
+          isEmpty: isEmpty,
+          seletedElementId: seletedElementId,
+        })
+      );
+      console.log(
+        JSON.parse(localStorage.getItem("FavoriteCategoriesContext"))
+      );
     }
+
+    // New Current Category is clicked to display on charts
     if (parentClassName === "categories-dashboard-container") {
       setCurrentCategoryInfos({
         id: clickedCategory.id,
         title: clickedCategory.name,
         nbKeywords: clickedCategory.nbKeywords,
       });
+      setSeletedElementId(Number(clickedCategory.id));
 
       let newSearchVolume = await getVolumeById(eventId);
       setData(newSearchVolume);
@@ -93,10 +163,61 @@ function CategorySelector({ id, nbKeywords, name }) {
 
       let newAverageData_sec = getAverageData(newfiltredData_sec);
       setAverageData_sec(newAverageData_sec);
+
+      localStorage.setItem(
+        "CurrentCategoryContext",
+        JSON.stringify({
+          currentCategoryInfos: {
+            id: clickedCategory.id,
+            title: clickedCategory.name,
+            nbKeywords: clickedCategory.nbKeywords,
+          },
+        })
+      );
+
+      localStorage.setItem(
+        "FavoriteCategoriesContext",
+        JSON.stringify({
+          categories: categories,
+          favoriteCategoriesArray: favoriteCategoriesArray,
+          isEmpty: isEmpty,
+          seletedElementId: Number(eventId),
+        })
+      );
+
+      localStorage.setItem(
+        "ChartContext",
+        JSON.stringify({
+          startingDate: startingDate,
+          endingDate: endingDate,
+          data: newSearchVolume,
+          filtredData: newfiltredData,
+          averageData: newAverageData,
+        })
+      );
+
+      localStorage.setItem(
+        "SecondaryChartContext",
+        JSON.stringify({
+          startingDate_sec: startingDate_sec,
+          endingDate_sec: endingDate_sec,
+          data_sec: newSearchVolume,
+          filtredData_sec: newfiltredData_sec,
+          averageData_sec: newAverageData_sec,
+        })
+      );
     }
   }
   return (
-    <div className="category-selector" onClick={selectorClickHandler} id={id}>
+    <div
+      className={
+        selected
+          ? "category-selector category-selector-clicked"
+          : "category-selector"
+      }
+      onClick={selectorClickHandler}
+      id={id}
+    >
       <div className="category-id-container">
         <p>Id</p>
         <span>{id}</span>
@@ -108,6 +229,6 @@ function CategorySelector({ id, nbKeywords, name }) {
       </div>
     </div>
   );
-}
+};
 
 export default CategorySelector;

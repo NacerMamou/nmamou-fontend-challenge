@@ -1,6 +1,6 @@
-function CircleComparator({ title, value, percentage }) {
+const CircleComparator = ({ title, percentage, className }) => {
   return (
-    <div className="circle-comparator">
+    <div className={className}>
       <span className="title">{title}</span>
       {percentage >= 0 && (
         <div className="percentage">

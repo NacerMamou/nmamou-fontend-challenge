@@ -2,8 +2,8 @@ import { useContext } from "react";
 import CategorySelector from "../category-selector/category-selector.component";
 import { FavoriteCategoriesContext } from "../../contexts/favorite-categories.context";
 
-function CategoriesDashboard() {
-  const { favoriteCategoriesArray } = useContext(FavoriteCategoriesContext);
+const CategoriesDashboard = () => {
+  const { favoriteCategoriesArray, seletedElementId } = useContext(FavoriteCategoriesContext);
   return (
     <div className="categories-dashboard">
       <div className="header-container">
@@ -19,6 +19,7 @@ function CategoriesDashboard() {
               nbKeywords={category.nbKeywords}
               name={category.name}
               key={index}
+              selected={seletedElementId == category.id}
             />
           );
         })}

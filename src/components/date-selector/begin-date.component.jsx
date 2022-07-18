@@ -1,25 +1,37 @@
+import opt from "../../utils/dates-data";
 import { ChartContext } from "../../contexts/chart.context";
 import { SecondaryChartContext } from "../../contexts/secondary-chart.context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
   getVolumeForCustomPeriod,
   getNumberOfRecords,
   getAverageData,
   oneYearBeforeDate,
+  getDateIndexInSelector,
 } from "../../utils/date.utils";
 
 
-function BeginDateSelector({ label, options }) {
-  const { data,setFiltredData, setAverageData, setStartingDate, endingDate } =
+
+const BeginDateSelector = ({ label, options }) => {
+  const { startingDate, endingDate, data, setFiltredData, setAverageData, setStartingDate,  } =
     useContext(ChartContext);
   const {
+    data_sec,
     setFiltredData_sec,
     setAverageData_sec,
     setStartingDate_sec,
     setEndingDate_sec,
   } = useContext(SecondaryChartContext);
 
+  useEffect(()=>{  
+  let beginDateElt = document.getElementById("begin-date-selector");
+  let startingDateIndex = getDateIndexInSelector(startingDate, opt);
+  beginDateElt.options.selectedIndex = startingDateIndex;
+  }, [startingDate]);
+
+
   function handleStartingDateChange(e) {
+
     let newStartingDate = Number(e.target.value);
     setStartingDate(newStartingDate);
 
@@ -49,6 +61,24 @@ function BeginDateSelector({ label, options }) {
 
     let newAverageData_sec = getAverageData(newfiltredData_sec);
     setAverageData_sec(newAverageData_sec);
+
+    localStorage.setItem("ChartContext", JSON.stringify({
+      startingDate : newStartingDate,
+      endingDate: endingDate,
+      data: data,
+      filtredData: newfiltredData,
+      averageData: newAverageData,
+    }
+    ));
+
+    localStorage.setItem("SecondaryChartContext", JSON.stringify({
+      startingDate_sec : newStartingDate_sec,
+      endingDate_sec: newEndingDate_sec,
+      data_sec: data_sec,
+      filtredData_sec: newfiltredData_sec,
+      averageData_sec: newAverageData_sec,
+    }
+    ));
   }
 
   return (
@@ -62,6 +92,7 @@ function BeginDateSelector({ label, options }) {
           handleStartingDateChange(e);
         }}
         className="selector"
+        id="begin-date-selector"
       >
         {options.map(({ label, key, value }) => {
           return (

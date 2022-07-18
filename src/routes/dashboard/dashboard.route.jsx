@@ -2,16 +2,13 @@ import Chart from "../../components/chart-component/chart.component";
 import SecondaryChart from "../../components/secondary-chart/secondary-chart.component";
 import CurrentCategory from "../../components/current-category/current-category.component";
 import VolumesComparator from "../../components/volumes-comparator/volumes-comparator.component";
-
 import CategoriesDashboard from "../../components/categories-dashbord/categories-dashboard.component";
-
 import { ChartContext } from "../../contexts/chart.context";
 import { CurrentCategoryContext } from "../../contexts/current-category.context";
-
 import { oneYearBeforeDate } from "../../utils/date.utils";
 import { useContext } from "react";
 
-function Dashboard() {
+const Dashboard = () => {
   const { startingDate, endingDate } = useContext(ChartContext);
   const { currentCategoryInfos } = useContext(CurrentCategoryContext);
   return (
@@ -25,7 +22,6 @@ function Dashboard() {
         </div>
         <CategoriesDashboard />
         <div className="main-container">
-          
           <CurrentCategory
             startingDate={startingDate}
             endingDate={endingDate}
@@ -44,7 +40,7 @@ function Dashboard() {
       </div>
 
       <div className="extra-container">
-        <VolumesComparator/>
+        <VolumesComparator />
       </div>
     </div>
   );

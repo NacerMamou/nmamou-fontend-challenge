@@ -1,20 +1,18 @@
 import { useEffect, useState, useContext } from "react";
 import CategorySelector from "../category-selector/category-selector.component";
 import { FavoriteCategoriesContext } from "../../contexts/favorite-categories.context";
+import { getRequest } from "../../http/request-functions";
 
-function CategoriesSearcher() {
+const CategoriesSearcher = () => {
   const { categories, setCategories } = useContext(FavoriteCategoriesContext);
   const [filtredCategories, setFiltredCategories] = useState([]);
   const [searchField, setSearchField] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/categories.json")
-      .then((res) => res.json())
-      .then((res) => {
-        setCategories(res);
-        setFiltredCategories(res);
-      })
-      .catch((error) => console.log(error));
+    getRequest("/api/categories.json").then((categoriesList) => {
+      setCategories(categoriesList);
+      setFiltredCategories(categoriesList);
+    });
   }, []);
 
   useEffect(() => {
@@ -63,6 +61,6 @@ function CategoriesSearcher() {
       </div>
     </div>
   );
-}
+};
 
 export default CategoriesSearcher;
