@@ -43,8 +43,8 @@ const VolumesComparator = () => {
         <div className="period-selection">
           <p>- Select the period range :</p>
           <div className="date-selectors">
-            <BeginDateSelector label={"STARTING DATE"} options={opt} />
-            <EndDateSelector label={"ENDING DATE"} options={opt} />
+            <BeginDateSelector label={"START DATE"} options={opt} />
+            <EndDateSelector label={"END DATE"} options={opt} />
           </div>
         </div>
 

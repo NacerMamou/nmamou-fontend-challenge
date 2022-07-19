@@ -16,7 +16,7 @@
   align-items: center;
   background-color: #111019;
   border-radius: 0.8vw;
-  box-shadow: 0 0 4px #726a9a;
+  /* box-shadow: 0 0 4px #726a9a; */
 }
 #navigation a {
   text-decoration: none;
@@ -167,7 +167,10 @@
   width: 100%;
   justify-content: space-between;
 }
-#homepage .categories-searcher-container .categories-container .category-selector {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -181,33 +184,60 @@
   box-shadow: 0 0 0.4vw #726a9a;
   background: linear-gradient(45deg, #1d1b2a, #0c0d0e);
 }
-#homepage .categories-searcher-container .categories-container .category-selector span {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector
+  span {
   margin-left: 0.2vw;
 }
-#homepage .categories-searcher-container .categories-container .category-selector:hover {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-#homepage .categories-searcher-container .categories-container .category-selector:hover * {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector:hover
+  * {
   color: white;
 }
-#homepage .categories-searcher-container .categories-container .category-selector * {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector
+  * {
   background: transparent;
 }
-#homepage .categories-searcher-container .categories-container .category-selector .category-id-container {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector
+  .category-id-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   font-size: 0.65vw;
 }
-#homepage .categories-searcher-container .categories-container .category-selector .category-keywords-container {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector
+  .category-keywords-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.65vw;
 }
-#homepage .categories-searcher-container .categories-container .category-selector .category-name-container {
+#homepage
+  .categories-searcher-container
+  .categories-container
+  .category-selector
+  .category-name-container {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -216,32 +246,54 @@
   color: #f49900;
 }
 @media all and (max-width: 1025px) {
-  #homepage .categories-searcher-container .categories-container .category-selector {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector {
     width: 30%;
     height: 19vw;
     padding: 0.8vw 0.8vw;
     border-radius: 0.5vw;
     margin-bottom: 4vw;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector span {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    span {
     color: #56f7a5;
     margin-left: 0.2vw;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-id-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-id-container {
     font-size: 1.5vw;
     font-weight: 600;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-keywords-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-keywords-container {
     font-size: 1.5vw;
     font-weight: 600;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-name-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-name-container {
     font-size: 2.3vw;
     font-weight: 600;
   }
 }
 @media all and (max-width: 576px) {
-  #homepage .categories-searcher-container .categories-container .category-selector {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector {
     width: 47%;
     min-height: 30vw;
     padding: 4vw 0;
@@ -249,19 +301,35 @@
     margin-bottom: 4.5vw;
     box-shadow: 0 0 1.2svw #726a9a;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector span {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    span {
     color: #56f7a5;
     margin-left: 0.2vw;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-id-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-id-container {
     font-size: 2vw;
     font-weight: 600;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-keywords-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-keywords-container {
     font-size: 2vw;
     font-weight: 600;
   }
-  #homepage .categories-searcher-container .categories-container .category-selector .category-name-container {
+  #homepage
+    .categories-searcher-container
+    .categories-container
+    .category-selector
+    .category-name-container {
     font-size: 3.8vw;
     font-weight: 600;
   }
@@ -327,20 +395,32 @@
 #homepage .favorite-categories .cards-container .category-selector * {
   background: transparent;
 }
-#homepage .favorite-categories .cards-container .category-selector .category-id-container {
+#homepage
+  .favorite-categories
+  .cards-container
+  .category-selector
+  .category-id-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   font-size: 0.5vw;
 }
-#homepage .favorite-categories .cards-container .category-selector .category-keywords-container {
+#homepage
+  .favorite-categories
+  .cards-container
+  .category-selector
+  .category-keywords-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.5vw;
 }
-#homepage .favorite-categories .cards-container .category-selector .category-name-container {
+#homepage
+  .favorite-categories
+  .cards-container
+  .category-selector
+  .category-name-container {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -363,13 +443,25 @@
     color: #56f7a5;
     margin-left: 0.2vw;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-id-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-id-container {
     display: none;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-keywords-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-keywords-container {
     display: none;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-name-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-name-container {
     font-size: 2.5vw;
     font-weight: 600;
   }
@@ -388,13 +480,25 @@
     color: #56f7a5;
     margin-left: 0.2vw;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-id-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-id-container {
     display: none;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-keywords-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-keywords-container {
     display: none;
   }
-  #homepage .favorite-categories .cards-container .category-selector .category-name-container {
+  #homepage
+    .favorite-categories
+    .cards-container
+    .category-selector
+    .category-name-container {
     font-size: 3vw;
     font-weight: 600;
   }
@@ -641,14 +745,21 @@
   font-weight: 700;
   font-size: 1.5vw;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container {
   display: flex;
   flex-wrap: nowrap;
   align-self: center;
   width: 74%;
   overflow: auto;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -661,20 +772,44 @@
   background: linear-gradient(45deg, #1d1b2a, #0c0d0e);
   padding: 0.5vw;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector:hover {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector:hover {
   cursor: pointer;
   background: linear-gradient(45deg, #f49900, #d62f43);
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector * {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector
+  * {
   background-color: transparent;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-id-container {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector
+  .category-id-container {
   display: none;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-keywords-container {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector
+  .category-keywords-container {
   display: none;
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-name-container {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector
+  .category-name-container {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -683,7 +818,11 @@
   width: 100%;
 }
 @media all and (max-width: 1025px) {
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container
+    .category-selector {
     max-width: 11.5vw;
     min-width: 11.5vw;
     height: 10vw;
@@ -691,13 +830,22 @@
     margin-right: 2vw;
     padding: 0.5vw;
   }
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-name-container {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container
+    .category-selector
+    .category-name-container {
     font-size: 2vw;
     font-weight: 800;
   }
 }
 @media all and (max-width: 576px) {
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container
+    .category-selector {
     max-width: 13.5vw;
     min-width: 13.5vw;
     height: 12vw;
@@ -705,12 +853,21 @@
     margin-right: 2vw;
     padding: 0.5vw;
   }
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-name-container {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container
+    .category-selector
+    .category-name-container {
     font-size: 2.2vw;
     font-weight: 800;
   }
 }
-#dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector-clicked {
+#dashboard
+  .charts-container
+  .categories-dashboard
+  .categories-dashboard-container
+  .category-selector-clicked {
   background: linear-gradient(120deg, #f49900, #d62f43);
   border: none;
 }
@@ -756,10 +913,20 @@
   margin: 0 0.3vw;
   font-size: 0.9vw;
 }
-#dashboard .charts-container .main-container .current-category-container h2 .category-name {
+#dashboard
+  .charts-container
+  .main-container
+  .current-category-container
+  h2
+  .category-name {
   color: #f49900;
 }
-#dashboard .charts-container .main-container .current-category-container h2 .date {
+#dashboard
+  .charts-container
+  .main-container
+  .current-category-container
+  h2
+  .date {
   color: #56f7a5;
 }
 #dashboard .charts-container .main-container .main-chart {
@@ -790,7 +957,11 @@
   background-color: #1d1b2a;
   padding: 0;
 }
-#dashboard .charts-container .secondary-container .current-category-container h2 {
+#dashboard
+  .charts-container
+  .secondary-container
+  .current-category-container
+  h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -800,16 +971,31 @@
   text-align: center;
   font-size: 0.9vw;
 }
-#dashboard .charts-container .secondary-container .current-category-container h2 * {
+#dashboard
+  .charts-container
+  .secondary-container
+  .current-category-container
+  h2
+  * {
   display: flex;
   background: transparent;
   margin: 0 0.3vw;
   font-size: 0.9vw;
 }
-#dashboard .charts-container .secondary-container .current-category-container h2 .category-name {
+#dashboard
+  .charts-container
+  .secondary-container
+  .current-category-container
+  h2
+  .category-name {
   color: #f49900;
 }
-#dashboard .charts-container .secondary-container .current-category-container h2 .date {
+#dashboard
+  .charts-container
+  .secondary-container
+  .current-category-container
+  h2
+  .date {
   color: #56f7a5;
 }
 #dashboard .charts-container .secondary-container .secondary-chart {
@@ -860,10 +1046,20 @@
   flex-direction: column;
   margin-bottom: 3vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .category-details .title {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .category-details
+  .title {
   display: flex;
 }
-#dashboard .extra-container .volumes-comparator .infos .category-details .keywords {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .category-details
+  .keywords {
   display: flex;
 }
 #dashboard .extra-container .volumes-comparator .infos .category-details .id {
@@ -883,26 +1079,51 @@
 #dashboard .extra-container .volumes-comparator .infos .period-selection p {
   margin-bottom: 0.7vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .period-selection
+  .date-selectors {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .period-selection
+  .date-selectors
+  .date-selector {
   display: flex;
   flex-direction: column;
   width: 45%;
   align-items: center;
   border-radius: 0.2vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .label {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .period-selection
+  .date-selectors
+  .date-selector
+  .label {
   display: flex;
   font-size: 0.7vw;
   width: 100%;
   margin-bottom: 0.11vw;
   color: #56f7a5;
 }
-#dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .selector {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .period-selection
+  .date-selectors
+  .date-selector
+  .selector {
   background-color: #111019;
   display: flex;
   width: 100%;
@@ -927,34 +1148,74 @@
   margin: 0.5vw 0;
   width: 50%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .circle-dot-container {
   display: flex;
   justify-content: center;
   width: 25%;
   padding-top: 0.1vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container .circle-dot {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .circle-dot-container
+  .circle-dot {
   width: 0.7vw;
   height: 0.7vw;
   border-radius: 50%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .details {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .details {
   display: flex;
   flex-wrap: wrap;
   width: 75%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .details strong {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .details
+  strong {
   display: flex;
   width: 100%;
   margin-bottom: 0vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .details p {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .details
+  p {
   display: flex;
   align-items: center;
   width: 50%;
   font-weight: 600;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .current .details span {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .current
+  .details
+  span {
   display: flex;
   align-items: center;
   width: 50%;
@@ -964,38 +1225,83 @@
   width: 50%;
   margin: 0.5vw 0;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .circle-dot-container {
   display: flex;
   justify-content: center;
   width: 25%;
   padding-top: 0.1vw;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container .circle-dot {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .circle-dot-container
+  .circle-dot {
   width: 0.7vw;
   height: 0.7vw;
   border-radius: 50%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .details {
   display: flex;
   flex-wrap: wrap;
   width: 75%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details strong {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .details
+  strong {
   display: flex;
   width: 100%;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details p {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .details
+  p {
   display: flex;
   width: 30%;
   font-weight: 600;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .previous .details span {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .previous
+  .details
+  span {
   display: flex;
   justify-content: center;
   width: 70%;
   font-weight: 600;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .average-label {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .average-label {
   filter: brightness(1.2);
   color: #00e8b1;
   text-shadow: 0 0 0.5vw #00e8b1;
@@ -1005,7 +1311,12 @@
   filter: brightness(1.2);
   box-shadow: 0 0 0.3vw #00e8b1;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .minimum-label {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .minimum-label {
   filter: brightness(5);
   color: #5a00e6;
   text-shadow: 0 0 0.5vw #5a00e6;
@@ -1015,7 +1326,12 @@
   filter: brightness(5);
   box-shadow: 0 0 0.3vw #5a00e6;
 }
-#dashboard .extra-container .volumes-comparator .infos .evolution .maximum-label {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .infos
+  .evolution
+  .maximum-label {
   filter: brightness(1.2);
   color: yellow;
   text-shadow: 0 0 0.5vw yellow;
@@ -1032,7 +1348,11 @@
   width: 100%;
   padding: 0 1.5vw;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1043,7 +1363,11 @@
   position: relative;
   margin-top: 2vw;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator::after {
   content: "";
   position: absolute;
   display: flex;
@@ -1051,59 +1375,118 @@
   height: 4.2vw;
   border-radius: 50%;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .percentage {
   font-size: 0.9vw;
   text-shadow: 0 0 0.5vw;
   font-weight: 600;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .number {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .percentage
+  .number {
   margin-left: 0.35vw;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .symbol {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .percentage
+  .symbol {
   margin-left: 0.35vw;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .title {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .title {
   display: flex;
   justify-content: center;
   font-size: 0.9vw;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .negative {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .negative {
   color: #d62f43;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .positive {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .circle-comparator
+  .positive {
   color: #56f7a5;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .average-circle .title {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .average-circle
+  .title {
   color: #00e8b1;
   filter: brightness(1.2);
   text-shadow: 0 0 0.5vw #00e8b1;
   font-weight: 600;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .average-circle::after {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .average-circle::after {
   border: 0.4vw solid;
   border-color: #00e8b1;
   filter: brightness(1.2);
   box-shadow: 0 0 0.3vw #00e8b1;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .minimum-circle .title {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .minimum-circle
+  .title {
   color: #5a00e6;
   filter: brightness(5);
   text-shadow: 0 0 0.5vw #5a00e6;
   font-weight: 700;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .minimum-circle::after {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .minimum-circle::after {
   border: 0.4vw solid;
   border-color: #5a00e6;
   filter: brightness(5);
   box-shadow: 0 0 0.3vw #5a00e6;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .maximum-circle .title {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .maximum-circle
+  .title {
   color: yellow;
   filter: brightness(1.2);
   text-shadow: 0 0 0.5vw yellow;
   font-weight: 700;
 }
-#dashboard .extra-container .volumes-comparator .circle-comparators .maximum-circle::after {
+#dashboard
+  .extra-container
+  .volumes-comparator
+  .circle-comparators
+  .maximum-circle::after {
   border: 0.4vw solid;
   border-color: yellow;
   filter: brightness(1.2);
@@ -1154,7 +1537,10 @@
   #dashboard .charts-container .categories-dashboard .title p {
     font-size: 3vw;
   }
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container {
     width: 74%;
     padding-bottom: 1.3vw;
   }
@@ -1169,14 +1555,29 @@
   #dashboard .charts-container .main-container .current-category-container h2 {
     font-size: 2vw;
   }
-  #dashboard .charts-container .main-container .current-category-container h2 * {
+  #dashboard
+    .charts-container
+    .main-container
+    .current-category-container
+    h2
+    * {
     margin: 0 0.6vw;
     font-size: 2vw;
   }
-  #dashboard .charts-container .main-container .current-category-container h2 .category-name {
+  #dashboard
+    .charts-container
+    .main-container
+    .current-category-container
+    h2
+    .category-name {
     color: #f49900;
   }
-  #dashboard .charts-container .main-container .current-category-container h2 .date {
+  #dashboard
+    .charts-container
+    .main-container
+    .current-category-container
+    h2
+    .date {
     color: #56f7a5;
   }
   #dashboard .charts-container .main-container .main-chart {
@@ -1188,15 +1589,27 @@
   #dashboard .charts-container .secondary-container {
     height: 20vh;
   }
-  #dashboard .charts-container .secondary-container .current-category-container {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container {
     display: none;
     padding-top: 0.6vw;
   }
-  #dashboard .charts-container .secondary-container .current-category-container h2 {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container
+    h2 {
     width: 80%;
     font-size: 2vw;
   }
-  #dashboard .charts-container .secondary-container .current-category-container h2 * {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container
+    h2
+    * {
     margin: 0 0.6vw;
     font-size: 2vw;
   }
@@ -1231,10 +1644,20 @@
     width: 55%;
     margin-bottom: 3vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .category-details .title {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .category-details
+    .title {
     display: none;
   }
-  #dashboard .extra-container .volumes-comparator .infos .category-details .keywords {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .category-details
+    .keywords {
     font-size: 1.8vw;
     margin-right: 2vw;
   }
@@ -1252,18 +1675,43 @@
   #dashboard .extra-container .volumes-comparator .infos .period-selection p {
     display: none;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors {
     width: 100%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector {
     width: 45%;
     border-radius: 0.2vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .label {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector
+    .label {
     font-size: 1.7vw;
     margin-bottom: 0.11vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .selector {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector
+    .selector {
     border-radius: 0.15vw;
     font-size: 1.7vw;
     padding: 0.3vw 0.2vw;
@@ -1278,21 +1726,47 @@
   #dashboard .extra-container .volumes-comparator .infos .evolution .current {
     width: 43%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .current
+    .circle-dot-container {
     padding-top: 0.1vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container .circle-dot {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .current
+    .circle-dot-container
+    .circle-dot {
     width: 1.7vw;
     height: 1.7vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution .previous {
     width: 43%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .previous
+    .circle-dot-container {
     width: 25%;
     padding-top: 0.1vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container .circle-dot {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .previous
+    .circle-dot-container
+    .circle-dot {
     width: 1.7vw;
     height: 1.7vw;
   }
@@ -1306,13 +1780,21 @@
     width: 25%;
     padding: 0 1.5vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator {
     width: 6.5vw;
     height: 6.5vw;
     position: relative;
     margin-top: 1.2vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator::after {
     content: "";
     position: absolute;
     display: flex;
@@ -1320,18 +1802,40 @@
     height: 6.5vw;
     border-radius: 50%;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage {
     font-size: 1.5vw;
     text-shadow: 0 0 0.5vw;
     font-weight: 600;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .number {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage
+    .number {
     margin-left: 0.35vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .symbol {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage
+    .symbol {
     margin-left: 0.35vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .title {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .title {
     display: flex;
     justify-content: center;
     font-size: 1.5vw;
@@ -1361,7 +1865,10 @@
   #dashboard .charts-container .categories-dashboard .title p {
     font-size: 4.5vw;
   }
-  #dashboard .charts-container .categories-dashboard .categories-dashboard-container {
+  #dashboard
+    .charts-container
+    .categories-dashboard
+    .categories-dashboard-container {
     width: 60%;
     padding-bottom: 1.3vw;
   }
@@ -1376,22 +1883,39 @@
     font-size: 2.2vw;
     width: 100%;
   }
-  #dashboard .charts-container .main-container .current-category-container h2 * {
+  #dashboard
+    .charts-container
+    .main-container
+    .current-category-container
+    h2
+    * {
     margin: 0 0.6vw;
     font-size: 2.2vw;
   }
   #dashboard .charts-container .secondary-container {
     min-height: 21.5vh;
   }
-  #dashboard .charts-container .secondary-container .current-category-container {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container {
     padding-top: 0.6vw;
     display: none;
   }
-  #dashboard .charts-container .secondary-container .current-category-container h2 {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container
+    h2 {
     width: 100%;
     font-size: 2.2vw;
   }
-  #dashboard .charts-container .secondary-container .current-category-container h2 * {
+  #dashboard
+    .charts-container
+    .secondary-container
+    .current-category-container
+    h2
+    * {
     margin: 0 0.6vw;
     font-size: 2.2vw;
   }
@@ -1415,10 +1939,20 @@
     width: 40%;
     margin-bottom: 3vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .category-details .title {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .category-details
+    .title {
     display: none;
   }
-  #dashboard .extra-container .volumes-comparator .infos .category-details .keywords {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .category-details
+    .keywords {
     font-size: 2.5vw;
     margin-right: 2vw;
   }
@@ -1430,14 +1964,34 @@
     width: 60%;
     margin-bottom: 5vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector {
     width: 48%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .label {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector
+    .label {
     font-size: 2.5vw;
     margin-bottom: 0.11vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .selector {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .period-selection
+    .date-selectors
+    .date-selector
+    .selector {
     border-radius: 0.15vw;
     font-size: 2.5vw;
     padding: 0.3vw 0.2vw;
@@ -1451,21 +2005,47 @@
   #dashboard .extra-container .volumes-comparator .infos .evolution .current {
     width: 35%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .current
+    .circle-dot-container {
     padding-top: 1vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container .circle-dot {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .current
+    .circle-dot-container
+    .circle-dot {
     width: 2.3vw;
     height: 2.3vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution .previous {
     width: 43%;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .previous
+    .circle-dot-container {
     width: 25%;
     padding-top: 1vw;
   }
-  #dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container .circle-dot {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .infos
+    .evolution
+    .previous
+    .circle-dot-container
+    .circle-dot {
     width: 2.3vw;
     height: 2.3vw;
   }
@@ -1477,27 +2057,57 @@
     width: 25%;
     padding: 0 1.5vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator {
     width: 12vw;
     height: 12vw;
     position: relative;
     margin-top: 2.5vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator::after {
     width: 12vw;
     height: 12vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage {
     font-size: 2.6vw;
     text-shadow: 0 0 0.5vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .number {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage
+    .number {
     margin-left: 0.35vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .symbol {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .percentage
+    .symbol {
     margin-left: 0.35vw;
   }
-  #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .title {
+  #dashboard
+    .extra-container
+    .volumes-comparator
+    .circle-comparators
+    .circle-comparator
+    .title {
     font-size: 2.6vw;
   }
 }

@@ -698,15 +698,15 @@
 }
 @media all and (max-width: 576px) {
   #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector {
-    max-width: 13.5vw;
-    min-width: 13.5vw;
-    height: 12vw;
+    max-width: 18vw;
+    min-width: 18vw;
+    height: 16vw;
     border-radius: 0.2vw;
     margin-right: 2vw;
-    padding: 0.5vw;
+    padding: 1vw;
   }
   #dashboard .charts-container .categories-dashboard .categories-dashboard-container .category-selector .category-name-container {
-    font-size: 2.2vw;
+    font-size: 3vw;
     font-weight: 800;
   }
 }
@@ -732,6 +732,7 @@
   justify-content: space-between;
   width: 100%;
   height: 18vw;
+  background-color: #1d1b2a;
 }
 #dashboard .charts-container .main-container .current-category-container {
   display: flex;
@@ -781,6 +782,7 @@
   width: 100%;
   height: 18vw;
   border-radius: 0.8vw;
+  background-color: #1d1b2a;
 }
 #dashboard .charts-container .secondary-container .current-category-container {
   display: flex;
@@ -1040,7 +1042,6 @@
   width: 4.2vw;
   height: 4.2vw;
   border-radius: 50%;
-  position: relative;
   margin-top: 2vw;
 }
 #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
@@ -1085,6 +1086,14 @@
   filter: brightness(1.2);
   box-shadow: 0 0 0.3vw #00e8b1;
 }
+@media all and (max-width: 576px) {
+  #dashboard .extra-container .volumes-comparator .circle-comparators .average-circle::after {
+    border: 3vw solid;
+    border-color: #00e8b1;
+    filter: brightness(1.2);
+    box-shadow: 0 0 0.3vw #00e8b1;
+  }
+}
 #dashboard .extra-container .volumes-comparator .circle-comparators .minimum-circle .title {
   color: #5a00e6;
   filter: brightness(5);
@@ -1097,6 +1106,14 @@
   filter: brightness(5);
   box-shadow: 0 0 0.3vw #5a00e6;
 }
+@media all and (max-width: 576px) {
+  #dashboard .extra-container .volumes-comparator .circle-comparators .minimum-circle::after {
+    border: 3vw solid;
+    border-color: #5a00e6;
+    filter: brightness(1.2);
+    box-shadow: 0 0 0.3vw #5a00e6;
+  }
+}
 #dashboard .extra-container .volumes-comparator .circle-comparators .maximum-circle .title {
   color: yellow;
   filter: brightness(1.2);
@@ -1108,6 +1125,14 @@
   border-color: yellow;
   filter: brightness(1.2);
   box-shadow: 0 0 0.3vw yellow;
+}
+@media all and (max-width: 576px) {
+  #dashboard .extra-container .volumes-comparator .circle-comparators .maximum-circle::after {
+    border: 3vw solid;
+    border-color: yellow;
+    filter: brightness(1.2);
+    box-shadow: 0 0 0.3vw yellow;
+  }
 }
 @media all and (max-width: 1025px) {
   #dashboard {
@@ -1159,10 +1184,9 @@
     padding-bottom: 1.3vw;
   }
   #dashboard .charts-container .main-container {
-    height: 20vh;
+    height: 22vh;
   }
   #dashboard .charts-container .main-container .current-category-container {
-    display: none;
     padding-top: 0.6vw;
     border-radius: 0.8vw 0.8vw 0 0;
   }
@@ -1186,10 +1210,9 @@
     border-radius: 0.8vw 0.8vw 0 0;
   }
   #dashboard .charts-container .secondary-container {
-    height: 20vh;
+    height: 22vh;
   }
   #dashboard .charts-container .secondary-container .current-category-container {
-    display: none;
     padding-top: 0.6vw;
   }
   #dashboard .charts-container .secondary-container .current-category-container h2 {
@@ -1340,10 +1363,10 @@
 @media all and (max-width: 576px) {
   #dashboard .charts-container .top-header .page-name-container i {
     font-size: 5.5vw;
-    padding-right: 2.5vw;
+    padding-right: 2.2vw;
   }
   #dashboard .charts-container .top-header .page-name-container h2 {
-    font-size: 5vw;
+    font-size: 6vw;
   }
   #dashboard .charts-container .categories-dashboard {
     margin-bottom: 1.8vw;
@@ -1366,34 +1389,32 @@
     padding-bottom: 1.3vw;
   }
   #dashboard .charts-container .main-container {
-    min-height: 21.5vh;
+    min-height: 50vw;
+    padding-top: 2vw;
   }
   #dashboard .charts-container .main-container .current-category-container {
-    display: none;
     border-radius: 0.8vw 0.8vw 0 0;
   }
   #dashboard .charts-container .main-container .current-category-container h2 {
-    font-size: 2.2vw;
+    font-size: 3vw;
     width: 100%;
   }
   #dashboard .charts-container .main-container .current-category-container h2 * {
     margin: 0 0.6vw;
-    font-size: 2.2vw;
+    font-size: 3vw;
   }
   #dashboard .charts-container .secondary-container {
-    min-height: 21.5vh;
-  }
-  #dashboard .charts-container .secondary-container .current-category-container {
-    padding-top: 0.6vw;
-    display: none;
+    z-index: 0;
+    height: 50vw;
+    padding-top: 3vw;
   }
   #dashboard .charts-container .secondary-container .current-category-container h2 {
     width: 100%;
-    font-size: 2.2vw;
+    font-size: 3vw;
   }
   #dashboard .charts-container .secondary-container .current-category-container h2 * {
     margin: 0 0.6vw;
-    font-size: 2.2vw;
+    font-size: 3vw;
   }
   #dashboard .charts-container .secondary-container .secondary-chart {
     border-radius: 0 0 0.8vw 0.8vw;
@@ -1402,7 +1423,8 @@
     border-radius: 0 0 0.8vw 0.8vw;
   }
   #dashboard .extra-container {
-    padding: 3vw 2.5vw;
+    margin-top: 3vw;
+    padding: 3vw 3vw;
     border-radius: 0 0 0.8vw 0.8vw;
     min-height: 24vh;
   }
@@ -1412,35 +1434,37 @@
   #dashboard .extra-container .volumes-comparator .infos .category-details {
     flex-direction: column;
     align-items: flex-start;
-    width: 40%;
+    justify-content: center;
+    width: 45%;
     margin-bottom: 3vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .category-details .title {
     display: none;
   }
   #dashboard .extra-container .volumes-comparator .infos .category-details .keywords {
-    font-size: 2.5vw;
+    font-size: 3.1vw;
     margin-right: 2vw;
+    margin-bottom: 0.8vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .category-details .id {
-    font-size: 2.5vw;
+    font-size: 3.1vw;
     margin-right: 1vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .period-selection {
-    width: 60%;
+    width: 55%;
     margin-bottom: 5vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector {
     width: 48%;
   }
   #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .label {
-    font-size: 2.5vw;
+    font-size: 3.2vw;
     margin-bottom: 0.11vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .period-selection .date-selectors .date-selector .selector {
     border-radius: 0.15vw;
-    font-size: 2.5vw;
-    padding: 0.3vw 0.2vw;
+    font-size: 3.2vw;
+    padding: 1vw 0.2vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution {
     margin-bottom: 5vw;
@@ -1455,8 +1479,8 @@
     padding-top: 1vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution .current .circle-dot-container .circle-dot {
-    width: 2.3vw;
-    height: 2.3vw;
+    width: 3vw;
+    height: 3vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution .previous {
     width: 43%;
@@ -1466,29 +1490,29 @@
     padding-top: 1vw;
   }
   #dashboard .extra-container .volumes-comparator .infos .evolution .previous .circle-dot-container .circle-dot {
-    width: 2.3vw;
-    height: 2.3vw;
+    width: 3vw;
+    height: 3vw;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators {
-    top: 17%;
-    right: 39%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
-    width: 25%;
-    padding: 0 1.5vw;
+    width: 100%;
+    padding: 0 5vw;
+    position: static;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator {
-    width: 12vw;
-    height: 12vw;
+    width: 18vw;
+    height: 18vw;
     position: relative;
     margin-top: 2.5vw;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator::after {
-    width: 12vw;
-    height: 12vw;
+    width: 18vw;
+    height: 18vw;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage {
-    font-size: 2.6vw;
+    font-size: 3.5vw;
     text-shadow: 0 0 0.5vw;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .percentage .number {
@@ -1498,8 +1522,14 @@
     margin-left: 0.35vw;
   }
   #dashboard .extra-container .volumes-comparator .circle-comparators .circle-comparator .title {
-    font-size: 2.6vw;
+    font-size: 3.5vw;
   }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #root {
