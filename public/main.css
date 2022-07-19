@@ -578,6 +578,7 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
+  min-height: 100vh;
 }
 #dashboard .charts-container {
   display: flex;
@@ -637,7 +638,7 @@
   margin-right: 0.8vw;
 }
 #dashboard .charts-container .categories-dashboard .title p {
-  color: #d62f43;
+  color: #56f7a5;
   font-weight: 700;
   font-size: 1.5vw;
 }
@@ -731,7 +732,7 @@
   position: relative;
   justify-content: space-between;
   width: 100%;
-  height: 18vw;
+  min-height: 35vh;
   background-color: #1d1b2a;
 }
 #dashboard .charts-container .main-container .current-category-container {
@@ -780,7 +781,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 18vw;
+  min-height: 35vh;
   border-radius: 0.8vw;
   background-color: #1d1b2a;
 }
@@ -1379,10 +1380,10 @@
   }
   #dashboard .charts-container .categories-dashboard .title i {
     font-size: 5.5vw;
-    margin-right: 3vw;
+    margin-right: 1.8vw;
   }
   #dashboard .charts-container .categories-dashboard .title p {
-    font-size: 4.5vw;
+    font-size: 4.8vw;
   }
   #dashboard .charts-container .categories-dashboard .categories-dashboard-container {
     width: 60%;
